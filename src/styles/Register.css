@@ -1,0 +1,243 @@
+/* Register.css */
+
+/* Global variables and body styles are now in index.css */
+
+.register-page-wrapper {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family-primary);
+    padding-bottom: 4rem;
+    /* Add some space at the bottom */
+}
+
+/* Header Banner Section - Consistent with other pages */
+.register-header-banner {
+    text-align: center;
+    margin-bottom: 2rem;
+    background-image: url('/src/assets/Rectangle.png');
+    /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--header-banner-text-color);
+}
+
+html[dir="rtl"] .register-header-banner {
+    text-align: center;
+    /* RTL alignment */
+}
+
+.register-header-banner .container {
+    display: flex;
+    flex-direction: column;
+    /* Align header content to start (left in LTR) */
+}
+
+html[dir="rtl"] .register-header-banner .container {
+    align-items: center;
+    /* Align header content to end (right in RTL) */
+}
+
+.register-header-banner h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.register-header-banner .breadcrumb {
+    font-size: 1rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+/* Main Content Area */
+.register-main-content {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 20px;
+}
+
+.register-form-section {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    width: 100%;
+    max-width: 600px;
+    /* Limit form width for better readability */
+}
+
+.register-form-section h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.register-form-section p {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.register-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.register-form .form-group label {
+    display: block;
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.register-form .form-input-register {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-form .form-input-register:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(184, 142, 47, 0.2);
+    /* Soft shadow on focus */
+}
+
+.register-form .form-group.two-cols {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.register-form .form-group.two-cols label {
+    flex: 1;
+}
+
+/* Register Button */
+.register-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.register-btn:hover {
+    background-color: #a77c27;
+    /* Slightly darker primary color on hover */
+    transform: translateY(-2px);
+}
+
+.login-link-text {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.login-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+/* Notification styles (if not already global in index.css) */
+.app-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+    min-width: 250px;
+}
+
+.app-notification.success {
+    background-color: #4CAF50;
+    /* Green for success */
+}
+
+.app-notification.error {
+    background-color: #E97171;
+    /* Red for error */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .register-header-banner h1 {
+        font-size: 2rem;
+    }
+
+    .register-main-content {
+        padding: 2rem 15px;
+    }
+
+    .register-form-section {
+        padding: 1.5rem;
+    }
+
+    .register-form-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .register-form .form-group.two-cols {
+        flex-direction: column;
+        /* Stack columns vertically on smaller screens */
+        gap: 1rem;
+    }
+
+    .register-form .form-input-register {
+        padding: 0.7rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .register-btn {
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-header-banner h1 {
+        font-size: 1.8rem;
+    }
+
+    .register-header-banner .breadcrumb {
+        font-size: 0.8rem;
+    }
+
+    .register-form-section p {
+        font-size: 0.9rem;
+    }
+
+    .login-link-text {
+        font-size: 0.85rem;
+    }
+}

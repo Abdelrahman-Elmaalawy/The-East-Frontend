@@ -1,0 +1,119 @@
+/* PaymentOptions.css */
+.page-wrapper {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family-primary);
+    padding-bottom: 4rem;
+}
+
+/* Header Banner Section - Common styles for new pages */
+.header-banner {
+    background-color: var(--bg-light);
+    padding: 1.5rem 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+html[dir="rtl"] .header-banner {
+    text-align: center;
+}
+
+.header-banner .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+html[dir="rtl"] .header-banner .container {
+    align-items: center;
+}
+
+.header-banner h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    
+}
+
+.header-banner .breadcrumb {
+    font-size: 1rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+
+
+/* Content Section */
+.content-section {
+    padding: 3rem 20px;
+    line-height: 1.7;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.content-section h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.content-section p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.content-section .note {
+    font-style: italic;
+    color: var(--text-light);
+    margin-top: 2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header-banner h1 {
+        font-size: 2rem;
+    }
+    .content-section {
+        padding: 2rem 15px;
+    }
+    .content-section h2 {
+        font-size: 1.8rem;
+    }
+    .content-section h3 {
+        font-size: 1.3rem;
+    }
+    .content-section p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-banner h1 {
+        font-size: 1.8rem;
+    }
+    .header-banner .breadcrumb {
+        font-size: 0.8rem;
+    }
+    .content-section {
+        padding: 1.5rem 10px;
+    }
+    .content-section h2 {
+        font-size: 1.5rem;
+    }
+    .content-section h3 {
+        font-size: 1.1rem;
+    }
+    .content-section p {
+        font-size: 0.9rem;
+    }
+}

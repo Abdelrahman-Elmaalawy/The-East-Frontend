@@ -1,0 +1,32 @@
+// src/context/ShakeContext.jsx
+import React, { createContext, useContext, useState, useCallback } from 'react';
+
+const ShakeContext = createContext();
+
+export const useShake = () => useContext(ShakeContext);
+
+export const ShakeProvider = ({ children }) => {
+  const [shakeType, setShakeType] = useState(null); // 'cart' or 'wishlist'
+  const [isShaking, setIsShaking] = useState(false); // General flag if any shake is active
+
+  const triggerShake = useCallback((type) => {
+    setShakeType(type);
+    setIsShaking(true);
+    setTimeout(() => {
+      setIsShaking(false);
+      setShakeType(null); // Reset shake type after animation
+    }, 500); // Shake duration in milliseconds
+  }, []);
+
+  const value = {
+    isShaking,      // Boolean: true if any item is shaking
+    shakeType,      // String: 'cart', 'wishlist', or null
+    triggerShake    // Function to initiate a shake
+  };
+
+  return (
+    <ShakeContext.Provider value={value}>
+      {children}
+    </ShakeContext.Provider>
+  );
+};

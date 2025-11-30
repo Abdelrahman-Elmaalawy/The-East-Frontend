@@ -1,0 +1,409 @@
+/* Checkout.css */
+
+/* Global variables and body styles are now in index.css */
+
+.checkout-page-wrapper {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family-primary);
+    padding-bottom: 4rem;
+    /* Add some space at the bottom */
+}
+
+/* Header Banner Section */
+.checkout-header-banner {
+    text-align: center;
+    margin-bottom: 2rem;
+    background-image: url('/src/assets/Rectangle.png');
+    /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    height: 310px;
+    /* Consistent height with checkout header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--header-banner-text-color);
+}
+
+
+.checkout-header-banner .container {
+    display: flex;
+    flex-direction: column;
+    /* Align header content to start (left in LTR) */
+}
+
+html[dir="rtl"] .checkout-header-banner .container {
+    text-align: center;    /* Align header content to end (right in RTL) */
+}
+
+.checkout-header-banner h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.checkout-header-banner .breadcrumb {
+    font-size: 1rem;
+    color: var(--text-light);
+}
+
+.checkout-header-banner .breadcrumb a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.checkout-header-banner .breadcrumb a:hover {
+    color: var(--primary-color);
+}
+
+.checkout-header-banner .breadcrumb span {
+    color: var(--text-light);
+}
+
+/* Main Content Area */
+.checkout-main-content {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping for responsiveness */
+    gap: 2.5rem;
+    /* Space between form and summary */
+    padding-top: 2.5rem;
+    justify-content: center;
+    /* Center content horizontally */
+}
+
+/* Checkout Form Section */
+.checkout-form {
+    flex: 2;
+    /* Form takes more space */
+    min-width: 320px;
+    /* Minimum width before wrapping */
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.checkout-form h3 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    /* Center form title */
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group.two-cols {
+    display: flex;
+    gap: 1.5rem;
+    /* Space between two columns */
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+}
+
+.form-group label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    font-weight: 500;
+    width: 100%;
+    /* Full width for single column */
+}
+
+.form-group.two-cols label {
+    flex: 1;
+    /* Each label takes half space in two-cols */
+    min-width: 150px;
+    /* Minimum width for each column */
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--card-bg);
+    /* Use card-bg for inputs */
+    transition: border-color 0.2s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.form-textarea {
+    resize: vertical;
+    /* Allow vertical resizing */
+}
+
+/* Order Summary Section */
+.order-summary-section {
+    flex: 1;
+    /* Order summary takes less space */
+    min-width: 280px;
+    /* Minimum width before wrapping */
+}
+
+.order-summary {
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.order-summary h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    text-align: center;
+    /* Center title */
+}
+
+.summary-products-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.summary-product-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.summary-product-price {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.summary-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.summary-row:last-of-type {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.summary-grand-total {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.payment-methods {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.payment-option {
+    display: grid;
+    /* Changed to Grid layout */
+    grid-template-columns: auto 1fr;
+    /* First column for radio, second for label text */
+    grid-template-rows: auto auto;
+    /* First row for radio/label, second for description */
+    align-items: center;
+    /* Vertically align radio button with the label text */
+    gap: 0.5rem;
+    /* Gap between grid items */
+}
+
+.payment-option input[type="radio"] {
+    grid-column: 1;
+    /* Place radio button in the first column */
+    grid-row: 1;
+    /* Place radio button in the first row */
+    margin: 0;
+    /* Remove default margins */
+    flex-shrink: 0;
+    /* Ensure it doesn't shrink */
+    accent-color: var(--primary-color);
+}
+
+.payment-option label {
+    grid-column: 2;
+    /* Place label text in the second column */
+    grid-row: 1;
+    /* Place label text in the first row */
+    font-weight: 600;
+    color: var(--text-color);
+    cursor: pointer;
+    display: inline;
+    /* Ensure label content flows as inline text */
+}
+
+html[dir="rtl"] .payment-option input[type="radio"] {
+    /* For RTL, if labels are naturally reversed, this might need adjustment,
+       but usually grid handles it well with content order. */
+    /* If explicit reordering is needed in RTL, we'd use grid-column again. */
+}
+
+html[dir="rtl"] .payment-option label {
+    /* No change needed here for RTL with grid usually */
+}
+
+.payment-description {
+    grid-column: 1 / span 2;
+    /* Make description span both columns */
+    grid-row: 2;
+    /* Place description in the second row */
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 0;
+    /* Adjust margin as grid gap handles spacing */
+    line-height: 1.5;
+}
+
+.privacy-note {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    margin-top: 1.5rem;
+    line-height: 1.4;
+}
+
+.privacy-note a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.privacy-note a:hover {
+    filter: brightness(90%);
+}
+
+.place-order-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, filter 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+.place-order-btn:hover {
+    filter: brightness(90%);
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .checkout-main-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .checkout-form,
+    .order-summary-section {
+        width: 90%;
+        /* Take more width on smaller screens */
+        max-width: 600px;
+        /* Limit max width */
+    }
+
+    .form-group.two-cols {
+        flex-direction: column;
+        /* Stack columns vertically on smaller screens */
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .checkout-header-banner h1 {
+        font-size: 2rem;
+    }
+
+    .checkout-form,
+    .order-summary {
+        padding: 1.5rem;
+    }
+
+    .checkout-form h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+
+    .place-order-btn {
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+
+    /* Adjust grid for payment options on smaller screens if needed */
+    .payment-option {
+        grid-template-columns: auto 1fr;
+        /* Keep same grid structure */
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-main-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .checkout-form,
+    .order-summary-section {
+        width: 100%;
+        /* Full width on very small screens */
+    }
+
+    .checkout-header-banner h1 {
+        font-size: 1.8rem;
+    }
+
+    .checkout-header-banner .breadcrumb {
+        font-size: 0.8rem;
+    }
+}

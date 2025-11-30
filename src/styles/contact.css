@@ -1,0 +1,332 @@
+/* contact.css */
+
+/* Global variables and body styles are now in index.css */
+
+.contact-page-wrapper {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family-primary);
+    padding-bottom: 4rem;
+    /* Add some space at the bottom */
+}
+
+/* Header Banner Section */
+.contact-header-banner {
+    text-align: center;
+    margin-bottom: 2rem;
+    background-image: url('/src/assets/Rectangle.png');
+    /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    height: 310px;
+    /* Consistent height with checkout header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--header-banner-text-color);
+}
+
+html[dir="rtl"] .contact-header-banner {
+    text-align: center;
+    /* RTL alignment */
+}
+
+.contact-header-banner .container {
+    display: flex;
+    flex-direction: column;
+    /* Align header content to start (left in LTR) */
+}
+
+
+
+/* Main Content Area */
+.contact-main-content {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping for responsiveness */
+    gap: 3rem;
+    /* Space between info section and form */
+    padding: 4rem 20px;
+    /* Padding for the main content area */
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: flex-start;
+    /* Align items to the top */
+}
+
+/* Contact Info Section */
+.contact-info-section {
+    flex: 1;
+    /* Takes one part of the available space */
+    min-width: 300px;
+    /* Minimum width before wrapping */
+    max-width: 450px;
+    /* Max width for consistency */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* Space between main headings and info items */
+    text-align: left;
+    /* Default LTR */
+}
+
+html[dir="rtl"] .contact-info-section {
+    text-align: right;
+    /* RTL alignment */
+}
+
+.contact-info-section h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-section p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+.contact-info-section .info-item {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info-section .info-item h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-section .info-item p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+
+/* Contact Form Section */
+.contact-form-section {
+    flex: 2;
+    /* Form takes more space than info section */
+    min-width: 320px;
+    /* Minimum width before wrapping */
+    max-width: 700px;
+    /* Max width for the form */
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* Space between form groups */
+}
+
+.form-group-contact {
+    margin-bottom: 0;
+    /* Handled by gap in parent flex */
+}
+
+.form-group-contact.two-cols-contact {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+}
+
+.form-group-contact label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    font-weight: 500;
+    width: 100%;
+    /* Full width for single column */
+}
+
+.form-group-contact.two-cols-contact label {
+    flex: 1;
+    /* Each label takes half space in two-cols */
+    min-width: 150px;
+    /* Minimum width for each column */
+}
+
+.form-input-contact,
+.form-textarea-contact {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--card-bg);
+    /* Input background */
+    transition: border-color 0.2s ease;
+}
+
+.form-input-contact:focus,
+.form-textarea-contact:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.form-textarea-contact {
+    resize: vertical;
+    /* Allow vertical resizing */
+}
+
+.send-message-btn {
+    width: fit-content;
+    /* Adjust button width to content */
+    padding: 1rem 2.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, filter 0.3s ease;
+    align-self: flex-start;
+    /* Align button to start in LTR */
+}
+
+html[dir="rtl"] .send-message-btn {
+    align-self: flex-end;
+    /* Align button to end in RTL */
+}
+
+.send-message-btn:hover {
+    filter: brightness(90%);
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .contact-main-content {
+        flex-direction: column;
+        /* Stack info and form vertically */
+        align-items: center;
+        /* Center content when stacked */
+        gap: 2rem;
+        padding: 3rem 20px;
+    }
+
+    .contact-info-section,
+    .contact-form-section {
+        width: 90%;
+        /* Take more width on smaller screens */
+        max-width: 600px;
+        /* Limit max width */
+        min-width: unset;
+        /* Remove min-width when stacked */
+    }
+
+    .contact-info-section h2,
+    .contact-info-section p,
+    .contact-info-section .info-item {
+        text-align: center;
+        /* Center text in info section */
+    }
+
+    html[dir="rtl"] .contact-info-section h2,
+    html[dir="rtl"] .contact-info-section p,
+    html[dir="rtl"] .contact-info-section .info-item {
+        text-align: center;
+        /* Center text for RTL as well */
+    }
+
+    .send-message-btn {
+        align-self: center;
+        /* Center button when stacked */
+    }
+
+    html[dir="rtl"] .send-message-btn {
+        align-self: center;
+        /* Center button for RTL as well */
+    }
+
+    .form-group-contact.two-cols-contact {
+        flex-direction: column;
+        /* Stack columns vertically on smaller screens */
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-header-banner h1 {
+        font-size: 2rem;
+    }
+
+    .contact-main-content {
+        padding: 2rem 15px;
+    }
+
+    .contact-info-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-info-section p,
+    .contact-info-section .info-item p {
+        font-size: 0.95rem;
+    }
+
+    .contact-form-section {
+        padding: 2rem;
+    }
+
+    .form-input-contact,
+    .form-textarea-contact {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+
+    .send-message-btn {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-header-banner h1 {
+        font-size: 1.8rem;
+    }
+
+    .contact-header-banner .breadcrumb {
+        font-size: 0.8rem;
+    }
+
+    .contact-main-content {
+        padding: 1.5rem 10px;
+    }
+
+    .contact-info-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-info-section p,
+    .contact-info-section .info-item p {
+        font-size: 0.9rem;
+    }
+
+    .contact-form-section {
+        padding: 1.5rem;
+    }
+
+    .form-group-contact.two-cols-contact label {
+        min-width: unset;
+        /* Allow full width for very small screens */
+    }
+
+    .send-message-btn {
+        width: 100%;
+        /* Full width button on very small screens */
+        padding: 0.8rem 1.5rem;
+    }
+}

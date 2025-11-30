@@ -1,0 +1,431 @@
+
+/* Global variables and body styles are now in index.css */
+
+.compare-page {
+    padding-bottom: 4rem;
+    /* Add some space at the bottom */
+    background-color: var(--bg-color);
+    /* لون الخلفية بناءً على المتغيرات العالمية */
+    color: var(--text-color);
+    /* لون النص بناءً على المتغيرات العالمية */
+    font-family: var(--font-family-primary);
+    /* خط النص بناءً على المتغيرات العالمية */
+}
+
+.compare-header-banner {
+text-align: center;
+margin-bottom: 2rem;
+background-image: url('/src/assets/Rectangle.png');
+/* Ensure this path is correct */
+background-size: cover;
+background-position: center;
+height: 310px;
+/* Consistent height with checkout header */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+color: var(--header-banner-text-color);
+}
+
+/* تعديل المحاذاة لليمين في وضع RTL */
+html[dir="rtl"] .compare-header-banner {
+    text-align: center;
+}
+
+.compare-header-banner .container {
+    display: flex;
+    flex-direction: column;
+    /* محاذاة العنوان والـ breadcrumb لليسار بشكل افتراضي */
+}
+
+.compare-header-banner h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.compare-empty-section {
+    text-align: center;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    /* المسافة بين العناصر */
+}
+
+.compare-empty {
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.add-product-main-btn {
+    background-color: var(--primary-color);
+    /* لون الزر الأساسي */
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* انتقال سلس عند التفاعل */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* المسافة بين الأيقونة والنص */
+}
+
+.add-product-main-btn:hover {
+    filter: brightness(90%);
+    /* تعتيم اللون عند التفاعل */
+}
+
+
+.compare-table-wrapper {
+    max-width: 1240px;
+    /* أقصى عرض للجدول */
+    margin: 0 auto;
+    /* توسيط الجدول */
+    overflow-x: auto;
+    /* تمكين التمرير الأفقي على الشاشات الصغيرة */
+    padding: 2rem 0;
+    /* إضافة مسافة عمودية */
+}
+
+.compare-table-wrapper table {
+    width: 100%;
+    min-width: 700px;
+    /* الحد الأدنى للعرض لمنع ضغط المحتوى */
+    border-collapse: collapse;
+    /* دمج حدود الخلايا */
+    border: 1px solid var(--border-color);
+    /* حدود الجدول */
+    background-color: var(--card-bg);
+    /* خلفية الجدول */
+    border-radius: 8px;
+    /* حواف مستديرة للجدول */
+    overflow: hidden;
+    /* لضمان تطبيق الحواف المستديرة */
+}
+
+.compare-table-wrapper th,
+.compare-table-wrapper td {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    /* حدود الخلايا */
+    vertical-align: middle;
+    /* توسيط المحتوى عموديًا */
+    color: var(--text-color);
+}
+
+.compare-table-wrapper th {
+    background-color: var(--bg-light);
+    /* خلفية أفتح للرؤوس */
+    font-weight: 600;
+}
+
+.compare-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    /* تغطية المساحة المتاحة */
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+}
+
+.compare-name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.remove-btn {
+    background-color: transparent;
+    border: none;
+    color: #E97171;
+    /* لون أحمر للإزالة */
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.remove-btn:hover {
+    transform: scale(1.2);
+    /* تكبير عند التفاعل */
+    color: #CC5555;
+}
+
+.empty-compare-cell {
+    background-color: var(--card-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* ملء ارتفاع الخلية */
+    min-height: 150px;
+    /* ضمان حد أدنى للارتفاع */
+    border: 2px dashed var(--border-color);
+    /* حدود متقطعة للخلية الفارغة */
+    border-radius: 8px;
+    /* مطابقة لحواف الجدول */
+}
+
+.add-product-placeholder-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px dashed var(--primary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.add-product-placeholder-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.add-product-placeholder-btn svg {
+    font-size: 1.5rem;
+}
+
+.add-to-cart-compare-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, filter 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.add-to-cart-compare-btn:hover {
+    filter: brightness(90%);
+}
+
+
+/* Modal Styles - أنماط النافذة المنبثقة لإضافة المنتجات */
+.modal-overlay {
+    position: fixed;
+    /* تثبيت المودال في نافذة العرض */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* خلفية شبه شفافة */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* ضمان ظهور المودال فوق العناصر الأخرى */
+}
+
+.modal-content {
+    background-color: var(--bg-color);
+    /* خلفية المودال */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* ظل للمودال */
+    width: 90%;
+    max-width: 500px;
+    /* أقصى عرض للمودال */
+    position: relative;
+    max-height: 80vh;
+    /* تحديد أقصى ارتفاع للمودال */
+    overflow-y: auto;
+    /* تمكين التمرير داخل المودال إذا كان المحتوى كبيرًا */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* المسافة بين عناصر المودال */
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+/* تعديل موقع زر الإغلاق في وضع RTL */
+html[dir="rtl"] .modal-close-btn {
+    left: 15px;
+    right: auto;
+}
+
+.modal-content h3 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.modal-search-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--card-bg);
+}
+
+.modal-product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 0.5rem;
+    max-height: 300px;
+    /* تحديد أقصى ارتفاع لقائمة المنتجات */
+    overflow-y: auto;
+    /* تمكين التمرير داخل القائمة */
+}
+
+.modal-product-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    background-color: var(--card-bg);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.modal-product-item:hover {
+    background-color: var(--bg-light);
+}
+
+.modal-product-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.modal-product-item span {
+    color: var(--text-color);
+    font-size: 1rem;
+    flex-grow: 1;
+    /* السماح للنص بأخذ المساحة المتاحة */
+}
+
+/* عكس ترتيب العناصر في وضع RTL */
+html[dir="rtl"] .modal-product-item {
+    flex-direction: row-reverse;
+}
+
+
+.no-results-modal {
+    text-align: center;
+    color: var(--text-light);
+    padding: 1rem;
+}
+
+.clear-compare-modal-btn {
+    background-color: #E97171;
+    /* لون أحمر واضح */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, filter 0.3s ease;
+    margin-top: 1rem;
+}
+
+.clear-compare-modal-btn:hover {
+    filter: brightness(90%);
+}
+
+
+/* Responsive Adjustments - تعديلات الاستجابة */
+@media (max-width: 768px) {
+    .compare-table-wrapper table {
+        font-size: 0.9rem;
+    }
+
+    .compare-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .compare-page {
+        padding: 1rem;
+    }
+
+    .add-product-placeholder-btn {
+        padding: 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .add-product-placeholder-btn svg {
+        font-size: 1.2rem;
+    }
+
+    .compare-table-wrapper th,
+    .compare-table-wrapper td {
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .compare-table-wrapper table {
+        min-width: 400px;
+        /* عرض أدنى أصغر للشاشات الصغيرة جدًا */
+    }
+
+    .compare-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .add-product-placeholder-btn {
+        font-size: 0.7rem;
+    }
+
+    .add-product-placeholder-btn svg {
+        font-size: 1rem;
+    }
+
+    .modal-content {
+        padding: 1rem;
+    }
+
+    .modal-search-input {
+        font-size: 0.9rem;
+    }
+
+    .modal-product-item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .modal-product-item span {
+        font-size: 0.9rem;
+    }
+}

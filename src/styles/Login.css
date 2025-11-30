@@ -1,0 +1,254 @@
+/* Login.css */
+
+/* Global variables and body styles are now in index.css */
+
+.login-page-wrapper {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family-primary);
+    padding-bottom: 4rem;
+    /* Add some space at the bottom */
+}
+
+/* Header Banner Section - Consistent with other pages */
+.login-header-banner {
+    text-align: center;
+    margin-bottom: 2rem;
+    background-image: url('/src/assets/Rectangle.png');
+    /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--header-banner-text-color);
+}
+
+html[dir="rtl"] .login-header-banner {
+    text-align: center;
+    /* RTL alignment */
+}
+
+.login-header-banner .container {
+    display: flex;
+    flex-direction: column;
+    /* Align header content to start (left in LTR) */
+}
+
+html[dir="rtl"] .login-header-banner .container {
+    align-items: center;
+    /* Align header content to end (right in RTL) */
+}
+
+.login-header-banner h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.login-header-banner .breadcrumb {
+    font-size: 1rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+/* Main Content Area */
+.login-main-content {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 20px;
+}
+
+.login-form-section {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    width: 100%;
+    max-width: 500px;
+    /* Limit form width */
+}
+
+.login-form-section h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.login-form-section p {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.login-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.login-form .form-group label {
+    display: block;
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.login-form .form-input-login {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-form .form-input-login:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(184, 142, 47, 0.2);
+    /* Soft shadow on focus */
+}
+
+.form-options {
+    display: flex;
+    justify-content: flex-end;
+    /* Align forgot password to right */
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+html[dir="rtl"] .form-options {
+    justify-content: flex-start;
+    /* Align forgot password to left in RTL */
+}
+
+.forgot-password-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+/* Login Button */
+.login-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.login-btn:hover {
+    background-color: #a77c27;
+    /* Slightly darker primary color on hover */
+    transform: translateY(-2px);
+}
+
+.register-link-text {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.register-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+/* Notification styles (if not already global in index.css) */
+/* Assuming these are defined in index.css or common CSS,
+   but re-defining here for clarity if they are specific to forms. */
+.app-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+    min-width: 250px;
+}
+
+.app-notification.success {
+    background-color: #4CAF50;
+    /* Green for success */
+}
+
+.app-notification.error {
+    background-color: #E97171;
+    /* Red for error */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .login-header-banner h1 {
+        font-size: 2rem;
+    }
+
+    .login-main-content {
+        padding: 2rem 15px;
+    }
+
+    .login-form-section {
+        padding: 1.5rem;
+    }
+
+    .login-form-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .login-form .form-input-login {
+        padding: 0.7rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .login-btn {
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-header-banner h1 {
+        font-size: 1.8rem;
+    }
+
+    .login-header-banner .breadcrumb {
+        font-size: 0.8rem;
+    }
+
+    .login-form-section p {
+        font-size: 0.9rem;
+    }
+
+    .register-link-text {
+        font-size: 0.85rem;
+    }
+}

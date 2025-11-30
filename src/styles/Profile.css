@@ -1,0 +1,636 @@
+/* Profile.css */
+
+/* Global variables and body styles are now in index.css */
+
+.profile-page-wrapper {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family-primary);
+    padding-bottom: 4rem;
+    /* Add some space at the bottom */
+}
+
+/* Header Banner Section - Consistent with other pages */
+.profile-header-banner {
+    text-align: center;
+    margin-bottom: 2rem;
+    background-image: url('/src/assets/Rectangle.png');
+    /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--header-banner-text-color);
+}
+
+html[dir="rtl"] .profile-header-banner {
+    text-align: center;
+    /* RTL alignment */
+}
+
+.profile-header-banner .container {
+    display: flex;
+    flex-direction: column;
+    /* Align header content to start (left in LTR) */
+}
+
+html[dir="rtl"] .profile-header-banner .container {
+    align-items: center;
+    /* Align header content to end (right in RTL) */
+}
+
+.profile-header-banner h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.profile-header-banner .breadcrumb {
+    font-size: 1rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+/* Main Content Area */
+.profile-main-content {
+    display: flex;
+    gap: 3rem;
+    padding: 3rem 20px;
+    align-items: flex-start;
+    /* Align items to the top */
+}
+
+html[dir="rtl"] .profile-main-content {
+    flex-direction: row-reverse;
+    /* Reverse order for RTL */
+}
+
+.profile-sidebar {
+    width: 250px;
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    flex-shrink: 0;
+}
+
+.user-name-sidebar {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.profile-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-nav li {
+    margin-bottom: 1rem;
+}
+
+.profile-nav a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.profile-nav a:hover,
+.profile-nav a.active {
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+}
+
+.profile-nav a svg {
+    font-size: 1.2rem;
+}
+
+.profile-content-sections {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.profile-section {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.profile-section h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.info-grid,
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-item,
+.setting-item {
+    background-color: var(--bg-light);
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    /* For edit button positioning */
+}
+
+.info-item strong,
+.setting-item strong {
+    color: var(--primary-color);
+}
+
+/* Buttons */
+.edit-btn,
+.add-address-btn,
+.view-order-btn,
+.remove-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, filter 0.3s ease;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+.edit-btn:hover,
+.add-address-btn:hover,
+.view-order-btn:hover {
+    filter: brightness(90%);
+}
+
+.remove-btn {
+    background-color: #E97171;
+    /* Red for remove actions */
+    margin-left: 1rem;
+}
+
+.remove-btn:hover {
+    filter: brightness(90%);
+}
+
+/* Order History Table */
+.orders-table-wrapper {
+    overflow-x: auto;
+    /* Allow horizontal scrolling on smaller screens */
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.orders-table th,
+.orders-table td {
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    text-align: left;
+}
+
+html[dir="rtl"] .orders-table th,
+html[dir="rtl"] .orders-table td {
+    text-align: right;
+}
+
+.orders-table th {
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.orders-table td {
+    background-color: var(--card-bg);
+}
+
+.orders-table tr:nth-child(even) td {
+    background-color: #f5f5f5;
+
+    /* Lighter background for even rows */
+    /* Dark mode adjustment */
+    .dark & {
+        background-color: #383838;
+    }
+}
+
+
+/* Mobile view for orders table - convert to cards */
+@media (max-width: 768px) {
+    .orders-table thead {
+        display: none;
+        /* Hide table header */
+    }
+
+    .orders-table tbody,
+    .orders-table tr {
+        display: block;
+        /* Make rows behave like block elements */
+        width: 100%;
+    }
+
+    .orders-table tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .orders-table td {
+        display: flex;
+        /* Make table cells flexible */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        /* Take full width on mobile */
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .orders-table td::before {
+        /* Add labels for cells */
+        content: attr(data-label);
+        font-weight: bold;
+        color: var(--primary-color);
+        flex-basis: 45%;
+        /* Adjust width for label */
+        text-align: left;
+    }
+
+    html[dir="rtl"] .orders-table td::before {
+        text-align: right;
+    }
+}
+
+/* Shipping Addresses */
+.addresses-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.address-card {
+    background-color: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+
+.address-card.default-address {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color);
+    /* Highlight default address */
+}
+
+.address-card h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.address-card p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.address-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Logout Button Styling */
+.logout-btn {
+    background-color: var(--danger-color);
+    /* Use a defined danger color variable */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
+    display: block;
+    /* Make it a block element to center with margin auto */
+    margin: 30px auto 0;
+    /* Center horizontally and add top margin */
+}
+
+.logout-btn:hover {
+    background-color: var(--danger-color-dark);
+    /* Darker shade on hover */
+    transform: translateY(-3px);
+    /* Slight lift effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* Enhanced shadow on hover */
+}
+
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Ensure it's on top of other content */
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    /* Use card background for consistency */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* Deeper shadow for modal */
+    width: 90%;
+    max-width: 500px;
+    /* Max width for larger screens */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    color: var(--text-color);
+}
+
+.modal-content h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.modal-content label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="password"],
+.modal-content textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    /* Use a defined input background variable */
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-content input[type="text"]:focus,
+.modal-content input[type="password"]:focus,
+.modal-content textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.2);
+    /* Focus ring effect */
+    outline: none;
+}
+
+.modal-content textarea {
+    min-height: 100px;
+    resize: vertical;
+    /* Allow vertical resizing */
+}
+
+.modal-content .checkbox-label {
+    flex-direction: row;
+    /* Align checkbox and text horizontally */
+    align-items: center;
+    gap: 10px;
+    font-weight: normal;
+}
+
+.modal-content .checkbox-label input[type="checkbox"] {
+    width: auto;
+    /* Reset width for checkbox */
+    margin-top: 0;
+    transform: scale(1.2);
+    /* Make checkbox slightly larger */
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    /* Align buttons to the right */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.modal-actions button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-actions button:first-child {
+    /* Save/Add button */
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.modal-actions button:first-child:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-1px);
+}
+
+.modal-actions button:last-child {
+    /* Cancel button */
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.modal-actions button:last-child:hover {
+    background-color: var(--background-color-light);
+    /* Lighter background on hover */
+    transform: translateY(-1px);
+}
+
+/* Loading and Error Messages */
+.loading-message,
+.error-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    padding: 50px 0;
+}
+
+.error-message {
+    color: var(--danger-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .profile-main-content {
+        flex-direction: column;
+        /* Stack sidebar and content vertically */
+        align-items: center;
+        padding: 3rem 15px;
+    }
+
+    .profile-sidebar {
+        width: 90%;
+        max-width: 400px;
+        /* Limit sidebar width on smaller screens */
+        margin-bottom: 2rem;
+    }
+
+    .profile-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .profile-nav li {
+        margin-bottom: 0;
+    }
+
+    .profile-nav a {
+        padding: 0.5rem 1rem;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .profile-nav a svg {
+        font-size: 1rem;
+    }
+
+
+    .profile-content-sections {
+        width: 100%;
+    }
+
+    .profile-section {
+        padding: 1.5rem;
+    }
+
+    .profile-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .info-grid,
+    .settings-grid {
+        grid-template-columns: 1fr;
+        /* Stack info items vertically */
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-header-banner h1 {
+        font-size: 2rem;
+    }
+
+    .profile-main-content {
+        padding: 2rem 10px;
+    }
+
+    .profile-sidebar {
+        padding: 1.5rem;
+    }
+
+    .user-name-sidebar {
+        font-size: 1.5rem;
+    }
+
+    .profile-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .edit-btn,
+    .add-address-btn,
+    .view-order-btn,
+    .remove-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .modal-content {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .modal-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-actions button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-header-banner h1 {
+        font-size: 1.8rem;
+    }
+
+    .profile-header-banner .breadcrumb {
+        font-size: 0.8rem;
+    }
+
+    .profile-main-content {
+        gap: 2rem;
+        padding: 1rem 5px;
+    }
+
+    .profile-sidebar {
+        width: 95%;
+    }
+}

@@ -1,0 +1,448 @@
+/* Cart.css */
+
+/* Global variables and body styles are now in index.css */
+
+.cart-page-wrapper {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family-primary);
+    padding-bottom: 4rem;
+    /* Add some space at the bottom */
+}
+
+/* Header Banner Section */
+.cart-header-banner {
+    text-align: center;
+    margin-bottom: 2rem;
+    background-image: url('/src/assets/Rectangle.png');
+    /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    height: 310px;
+    /* Consistent height with checkout header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--header-banner-text-color);
+}
+
+.cart-header-banner .container {
+    display: flex;
+    flex-direction: column;
+    /* Align header content to start (left in LTR) */
+}
+
+.cart-header-banner h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.empty-msg {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    padding: 3rem 0;
+}
+
+.cart-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping for responsiveness */
+    gap: 2rem;
+    /* Space between cart items and summary */
+    justify-content: center;
+    /* Center content horizontally */
+    padding-top: 2rem;
+}
+
+.cart-items-section {
+    flex: 2;
+    /* Cart items section takes more space */
+    min-width: 320px;
+    /* Minimum width before wrapping */
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    /* For rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cart-table th,
+.cart-table td {
+    text-align: left;
+    /* Default LTR */
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+html[dir="rtl"] .cart-table th,
+html[dir="rtl"] .cart-table td {
+    /* RTL alignment */
+    text-align: center;
+}
+
+.cart-table th {
+    background-color: var(--bg-light);
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.product-info-cell {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.product-thumb-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.product-name-link {
+    font-weight: 500;
+    color: var(--text-color);
+    transition: color 0.2s ease;
+}
+
+.product-name-link:hover {
+    color: var(--primary-color);
+}
+
+.price-col,
+.total-col {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.quantity-controls-table {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 0.3rem 0.5rem;
+    width: fit-content;
+}
+
+.quantity-controls-table input[type="number"] {
+    width: 50px;
+    text-align: center;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    font-weight: 500;
+    appearance: textfield;
+    -moz-appearance: textfield;
+    /* Hide arrows in Firefox */
+}
+
+.quantity-controls-table input::-webkit-outer-spin-button,
+.quantity-controls-table input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    /* Hide arrows in Chrome/Safari */
+    margin: 0;
+}
+
+.quantity-controls-table button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.quantity-controls-table button:hover:not(:disabled) {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.quantity-controls-table button:disabled {
+    color: var(--text-light);
+    cursor: not-allowed;
+}
+
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #E97171;
+    /* Red color for remove icon */
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+    padding: 0;
+    /* Remove default button padding */
+}
+
+.remove-btn:hover {
+    color: #CC5555;
+    transform: scale(1.1);
+}
+
+/* Cart Summary Section */
+.cart-summary-section {
+    flex: 1;
+    /* Cart summary takes less space */
+    min-width: 280px;
+    /* Minimum width before wrapping */
+}
+
+.cart-summary {
+    background-color: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+    /* Adjust height to content */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cart-summary h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.summary-row:last-of-type {
+    border-bottom: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.grand-total-price {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.proceed-to-checkout-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, filter 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+.proceed-to-checkout-btn:hover {
+    filter: brightness(90%);
+}
+
+
+/* Mobile Card View Styles */
+@media (max-width: 930px) {
+    .cart-table {
+        display: none;
+        /* Hide table on mobile */
+    }
+
+    .cart-cards-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        /* Take full width on mobile */
+    }
+
+    .cart-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        /* Stack image and details vertically */
+        align-items: center;
+        /* Center content in card */
+        gap: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        /* Center text within card */
+    }
+
+    html[dir="rtl"] .cart-card {
+        text-align: center;
+        /* Center text for RTL as well */
+    }
+
+
+    .cart-card .product-image {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .cart-card-details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        /* Take full width */
+    }
+
+    .cart-card-details h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        color: var(--text-color);
+    }
+
+    .cart-card-details h3 a {
+        color: var(--text-color);
+        transition: color 0.2s ease;
+    }
+
+    .cart-card-details h3 a:hover {
+        color: var(--primary-color);
+    }
+
+    .cart-card-details p {
+        margin: 0;
+        color: var(--text-light);
+    }
+
+    .cart-card-details p span {
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+
+    .quantity-mobile-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Center controls */
+        gap: 0.5rem;
+        margin: 0.5rem 0;
+        background-color: var(--bg-light);
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+        padding: 0.3rem 0.5rem;
+        width: fit-content;
+        align-self: center;
+        /* Center the control group itself */
+    }
+
+    .quantity-mobile-controls input[type="number"] {
+        width: 50px;
+        text-align: center;
+        border: none;
+        background: transparent;
+        color: var(--text-color);
+        font-weight: 500;
+        appearance: textfield;
+        -moz-appearance: textfield;
+    }
+
+    .quantity-mobile-controls input::-webkit-outer-spin-button,
+    .quantity-mobile-controls input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .quantity-mobile-controls button {
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        cursor: pointer;
+        padding: 0.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 3px;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .quantity-mobile-controls button:hover:not(:disabled) {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .quantity-mobile-controls button:disabled {
+        color: var(--text-light);
+        cursor: not-allowed;
+    }
+
+
+    .remove-btn-mobile {
+        background-color: #E97171;
+        /* Red background for mobile remove button */
+        color: white;
+        border: none;
+        padding: 0.6rem 1.2rem;
+        border-radius: 5px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        width: fit-content;
+        align-self: center;
+        /* Center the button itself */
+    }
+
+    .remove-btn-mobile:hover {
+        filter: brightness(90%);
+    }
+
+    .cart-summary {
+        width: 100%;
+        /* Summary takes full width on mobile */
+    }
+}
+
+/* Adjustments for very small screens */
+@media (max-width: 480px) {
+    .cart-header-banner h1 {
+        font-size: 2rem;
+    }
+
+    .cart-header-banner .breadcrumb {
+        font-size: 0.9rem;
+    }
+
+    .cart-container {
+        padding: 1rem;
+    }
+
+    .cart-summary h2 {
+        font-size: 1.3rem;
+    }
+
+    .proceed-to-checkout-btn {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+}

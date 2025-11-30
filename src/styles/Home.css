@@ -1,0 +1,889 @@
+/* Home.css */
+
+/* Global variables and body styles are now in index.css */
+
+.home-page {
+    background-color: var(--bg-color);
+    /* Inherits from index.css, but ensure it uses the variable */
+    color: var(--text-color);
+    /* Inherits from index.css */
+    font-family: var(--font-family-primary);
+    /* Inherits from index.css */
+    padding-bottom: 4rem;
+    /* Add some padding at the bottom */
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('../assets/img/banner.png');
+    display: flex;
+    justify-content: flex-end;
+    /* Align content box to the right */
+    align-items: center;
+    /* Vertically center content box */
+    padding: 3rem 0;
+    /* Vertical padding, horizontal padding handled by text-box */
+    min-height: 700px;
+    /* Increased min-height to give more space for the background image */
+    background-size: cover;
+    /* Cover the entire area with the background image */
+    background-position: center center;
+    /* Center the background image */
+    background-repeat: no-repeat;
+    /* Do not repeat the background image */
+    position: relative;
+    /* For absolute positioning of the text box */
+    overflow: hidden;
+    /* Hide overflowing parts of the image */
+}
+/* The semi-transparent box containing text and button */
+.hero-text-box {
+    background-color: var(--bg-light);
+    /* Light background for the box */
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin-right: 10%;
+    /* Push the box to the right, adjusting from Figma */
+    position: relative;
+    z-index: 1;
+}
+
+html[dir="rtl"] .hero-text-box {
+    margin-left: 10%;
+    /* Push to the left in RTL */
+    margin-right: auto;
+}
+
+.hero-content {
+    text-align: left;
+}
+
+html[dir="rtl"] .hero-content {
+    text-align: right;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.hero-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    padding: 1rem 2.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, filter 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: var(--primary-color);
+    filter: brightness(90%);
+}
+
+
+/* Browse Categories Section */
+.browse-range {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.browse-range h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.browse-subtitle {
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: start;
+}
+
+.category-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-item img {
+    width: 100%;
+    max-width: 300px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.category-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Our Products Section */
+.products-section {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.products-section h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+/* Product Card Styling (re-used from Shop.css or general utility classes) */
+.product-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px var(--shadow-color);
+}
+
+.product-card .badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #E97171;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 5;
+}
+
+html[dir="rtl"] .product-card .badge {
+    left: 10px;
+    right: auto;
+}
+
+.image-wrap {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.info p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.price {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.price .current {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.price .old {
+    text-decoration: line-through;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    gap: 0.8rem;
+}
+
+.product-card:hover .hover-overlay {
+    opacity: 1;
+}
+
+.add-to-cart-btn {
+    background-color: white;
+    color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--primary-color) ;
+    color: white;
+}
+
+.add-to-cart-btn .button-icon {
+    font-size: 1.2rem;
+}
+
+.hover-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.hover-actions button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.hover-actions button:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.show-more-button-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.show-more-button {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 0.8rem 2.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.show-more-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+
+/* 50+ Beautiful Rooms Inspiration Section (Carousel) */
+.inspiration-section {
+    background-color: var(--bg-light);
+    padding: 4rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.inspiration-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+
+.inspiration-text-col {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+html[dir="rtl"] .inspiration-text-col {
+    text-align: right;
+}
+
+.inspiration-text-col h2 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.inspiration-text-col p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.inspiration-carousel-col {
+    flex: 1.5;
+    min-width: 450px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+html[dir="rtl"] .inspiration-carousel-col {
+    align-items: flex-start;
+}
+
+.carousel-image-container {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.room-info-box {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-end;
+    gap: 0.8rem;
+    max-width: 280px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+html[dir="rtl"] .room-info-box {
+    left: auto;
+    right: 20px;
+    flex-direction: row-reverse;
+}
+
+.room-index {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--important);
+    line-height: 1;
+}
+
+.room-details {
+    flex-grow: 1;
+}
+
+.room-details h3 {
+    font-size: 1.2rem;
+    color: var(--important);
+    margin-bottom: 0.2rem;
+}
+
+.room-details p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.3;
+}
+
+.room-link-arrow {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    width: 150px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.room-link-arrow:hover {
+    background-color: var(--primary-color);
+    filter: brightness(90%);
+    transform: translateX(5px);
+}
+
+/* Adjust FaArrowRight direction in RTL for .room-link-arrow */
+html[dir="rtl"] .room-link-arrow svg {
+    transform: rotate(180deg);
+    /* Rotate the arrow icon */
+}
+
+.carousel-navigation {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    margin-right: 20px;
+    /* Align with carousel image for LTR */
+    padding-bottom: 2rem;
+}
+
+html[dir="rtl"] .carousel-navigation {
+    margin-left: 20px;
+    /* Align with carousel image for RTL */
+    margin-right: auto;
+}
+
+
+.carousel-dots {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #D8D8D8;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--primary-color);
+    width: 25px;
+    border-radius: 6px;
+}
+
+.carousel-arrow {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, filter 0.3s ease;
+}
+
+.carousel-arrow:hover {
+    background-color: var(--primary-color);
+    filter: brightness(90%);
+}
+
+
+/* Share your setup with #FuniroFurniture (Photo Grid) */
+.funiro-furniture-section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.funiro-furniture-section h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.funiro-furniture-section h2 span {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.funiro-grid {
+    display: grid;
+    /* This will create an implicit grid with 8 columns, but we'll use areas for precise placement */
+    grid-template-columns: repeat(8, 1fr);
+    /* Basis for grid area definition */
+    grid-template-rows: auto;
+    /* Rows will adjust automatically */
+    gap: 10px;
+    /* Gap between images */
+    width: 100%;
+    max-width: 1240px;
+    /* Max width to contain the grid for desktop */
+    margin: 0 auto;
+    /* Center the grid */
+
+    /* Define grid areas as per Figma design for desktop layout */
+    grid-template-areas:
+        "item1 item1 item1 item2 item2 item3 item3 item3"
+        "item1 item1 item1 item4 item4 item5 item5 item5"
+        "item6 item6 item6 item4 item4 item7 item7 item7"
+        "item8 item8 item8 item4 item4 item7 item7 item7";
+    /* Example layout. Adjust as per Figma */
+
+    /* The actual number of rows needed will depend on the images assigned to areas */
+    /* Example: if item1 takes 2 rows, item2 takes 1, etc. */
+}
+
+/* Assign items to grid areas */
+.funiro-grid-item.item-1 {
+    grid-area: item1;
+}
+
+/* Large vertical image on left */
+.funiro-grid-item.item-2 {
+    grid-area: item2;
+}
+
+/* Top small horizontal */
+.funiro-grid-item.item-3 {
+    grid-area: item3;
+}
+
+/* Top right large horizontal */
+.funiro-grid-item.item-4 {
+    grid-area: item4;
+}
+
+/* Middle vertical */
+.funiro-grid-item.item-5 {
+    grid-area: item5;
+}
+
+/* Middle right */
+.funiro-grid-item.item-6 {
+    grid-area: item6;
+}
+
+/* Bottom left */
+.funiro-grid-item.item-7 {
+    grid-area: item7;
+}
+
+/* Bottom right */
+.funiro-grid-item.item-8 {
+    grid-area: item8;
+}
+
+/* Added for the 8th image */
+
+.funiro-grid-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    /* Add shadow for depth */
+}
+
+.funiro-grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.funiro-grid-item img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+
+    /* Hero Section */
+    .hero {
+        flex-direction: column;
+        min-height: auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        justify-content: center;
+    }
+
+    .hero-text-box {
+        position: relative;
+        margin: 2rem auto;
+        max-width: 80%;
+    }
+
+    html[dir="rtl"] .hero-text-box {
+        margin: 2rem auto;
+    }
+
+    .hero-content {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    html[dir="rtl"] .hero-content {
+        text-align: center;
+    }
+
+    /* Inspiration Section */
+    .inspiration-content-wrapper {
+        flex-direction: column;
+    }
+
+    .inspiration-text-col,
+    .inspiration-carousel-col {
+        min-width: unset;
+        width: 100%;
+        text-align: center;
+    }
+
+    html[dir="rtl"] .inspiration-text-col {
+        text-align: center;
+    }
+
+    .inspiration-carousel-col {
+        align-items: center;
+    }
+
+    html[dir="rtl"] .inspiration-carousel-col {
+        align-items: center;
+    }
+
+    .room-info-box {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 10px;
+        max-width: 90%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    html[dir="rtl"] .room-info-box {
+        right: auto;
+        left: 50%;
+        transform: translateX(50%);
+    }
+
+    .room-link-arrow {
+        margin-top: 0.5rem;
+    }
+
+    .carousel-navigation {
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: center;
+    }
+
+    html[dir="rtl"] .carousel-navigation {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Funiro Furniture Grid - Tablet/Mid-size screens */
+    .funiro-grid {
+        /* Simplified grid for tablets, maybe 4 columns */
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "item1 item1 item2 item2"
+            "item1 item1 item3 item3"
+            "item4 item4 item5 item5"
+            "item6 item6 item7 item7"
+            "item8 item8 . .";
+        /* Adjust based on image count */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .browse-range h2,
+    .products-section h2,
+    .funiro-furniture-section h2,
+    .tips-tricks-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .carousel-image-container {
+        height: 380px;
+    }
+
+    .room-info-box {
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    .room-index {
+        font-size: 2rem;
+    }
+
+    .room-details h3 {
+        font-size: 1rem;
+    }
+
+    .room-details p {
+        font-size: 0.8rem;
+    }
+
+    .room-link-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+    }
+
+    /* Funiro Furniture Grid - Smaller Tablet/Large Phone */
+    .funiro-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns for smaller screens */
+        grid-template-areas:
+            "item1 item2"
+            "item3 item4"
+            "item5 item6"
+            "item7 item8";
+    }
+
+    .funiro-grid-item {
+        /* Reset specific spans if any were set for larger grids */
+        grid-column: unset !important;
+        grid-row: unset !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-button {
+        padding: 0.8rem 2rem;
+    }
+
+    .browse-range,
+    .products-section,
+    .funiro-furniture-section,
+    .tips-tricks-section {
+        padding: 2rem 0;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .category-item img {
+        max-width: 250px;
+        height: 220px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .inspiration-carousel-col {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .carousel-image-container {
+        height: 280px;
+    }
+
+    .room-info-box {
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 95%;
+        padding: 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    html[dir="rtl"] .room-info-box {
+        right: auto;
+        left: 50%;
+        transform: translateX(50%);
+    }
+
+    .room-index {
+        font-size: 1.8rem;
+    }
+
+    .room-details h3 {
+        font-size: 0.9rem;
+    }
+
+    .room-details p {
+        font-size: 0.75rem;
+    }
+
+    /* Funiro Furniture Grid - Smallest Mobile */
+    .funiro-grid {
+        grid-template-columns: 1fr;
+        /* Single column for very small screens */
+        grid-template-areas: unset;
+        /* Remove grid areas for simple stack */
+    }
+
+    .funiro-grid-item {
+        width: 100%;
+        height: 250px;
+        /* Fixed height for consistency */
+    }
+}

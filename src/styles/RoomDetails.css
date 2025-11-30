@@ -1,0 +1,213 @@
+/* RoomDetails.css */
+
+/* Global variables and body styles are now in index.css */
+
+.room-details-page-wrapper {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family-primary);
+    padding-bottom: 4rem;
+    /* Add some space at the bottom */
+}
+
+/* Header Banner Section - Consistent with other pages */
+.room-details-header-banner {
+    text-align: center;
+    margin-bottom: 2rem;
+    background-image: url('/src/assets/Rectangle.png');
+    /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--header-banner-text-color);
+}
+
+html[dir="rtl"] .room-details-header-banner {
+    text-align: center;
+    /* RTL alignment */
+}
+
+.room-details-header-banner .container {
+    display: flex;
+    flex-direction: column;
+    /* Align header content to start (left in LTR) */
+}
+
+html[dir="rtl"] .room-details-header-banner .container {
+    align-items: center;
+    /* Align header content to end (right in RTL) */
+}
+
+.room-details-header-banner h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.room-details-header-banner .breadcrumb {
+    font-size: 1rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+/* Main Content Area */
+.room-details-main-content {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping for responsiveness */
+    gap: 3rem;
+    padding: 3rem 20px;
+    align-items: flex-start;
+    /* Align items to the top */
+}
+
+html[dir="rtl"] .room-details-main-content {
+    flex-direction: row-reverse;
+    /* Reverse order for RTL */
+}
+
+.room-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 45%;
+    /* Adjust width for gallery */
+    min-width: 300px;
+}
+
+.room-gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.room-info-section {
+    flex-grow: 1;
+    width: 50%;
+    /* Adjust width for info section */
+    min-width: 300px;
+}
+
+.room-info-section h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.room-info-section p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.room-info-section h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.room-info-section ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+html[dir="rtl"] .room-info-section ul {
+    list-style: disc;
+    /* Keep disc for RTL */
+    margin-right: 1.5rem;
+    margin-left: unset;
+}
+
+.room-info-section ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.room-quote {
+    font-style: italic;
+    color: var(--primary-color);
+    border-left: 4px solid var(--primary-color);
+    padding-left: 15px;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+}
+
+html[dir="rtl"] .room-quote {
+    border-left: none;
+    border-right: 4px solid var(--primary-color);
+    padding-left: unset;
+    padding-right: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .room-details-main-content {
+        flex-direction: column;
+        /* Stack columns vertically */
+        align-items: center;
+        padding: 3rem 15px;
+    }
+
+    .room-gallery,
+    .room-info-section {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .room-gallery {
+        flex-direction: row;
+        /* Keep images in a row on tablet */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .room-gallery img {
+        width: 48%;
+        /* Two images per row */
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .room-details-header-banner h1 {
+        font-size: 2rem;
+    }
+
+    .room-details-main-content {
+        padding: 2rem 15px;
+    }
+
+    .room-info-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .room-info-section p,
+    .room-info-section ul li {
+        font-size: 0.95rem;
+    }
+
+    .room-gallery img {
+        width: 100%;
+        /* Stack images vertically on smaller phones */
+    }
+}
+
+@media (max-width: 480px) {
+    .room-details-header-banner h1 {
+        font-size: 1.8rem;
+    }
+
+    .room-details-header-banner .breadcrumb {
+        font-size: 0.8rem;
+    }
+}

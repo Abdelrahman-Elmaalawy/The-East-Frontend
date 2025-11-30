@@ -95,8 +95,8 @@ function AnimatedRoutes({
 }
 
 function App() {
-  const logoName = "The East"; 
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const logoName = t("logoName");
 
   // Load products directly from mock data. In a frontend-only app, loading is immediate.
   const [products] = useState(mockProducts); 
